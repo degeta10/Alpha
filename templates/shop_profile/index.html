@@ -1,32 +1,58 @@
-{% block title %}Create a new shop{% endblock %}
-{% load staticfiles %}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
-{% block body %}
-<div class="container-fluid">
+<html>
+<head>
 
-    <div class="row">
+</head>
+<body>
+<form action="#" name="StudentRegistration" onsubmit="return(validate());">
 
-        <div class="col-sm-12 col-md-7">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <h3>Add a New Shop</h3>
-                    {% if error_message %}
-                        <p><strong>{{ error_message }}</strong></p>
-                    {% endif %}
-                    <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                       {% include 'shop_profile/form_template.html' %}
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-success">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+<table cellpadding="5" width="20%"  align="center"
+cellspacing="2">
 
-    </div>
+<tr>
+<td colspan=2>
+<center><font size=4><b> Create Shop </b></font></center>
+</td>
+</tr>
 
-</div>
-{% endblock %}
+<tr>
+<td>BName</td>
+<td><input type=text name=bname id="bname" size="30" required></td>
+</tr>
+
+<tr>
+<td>Location</td>
+<td><input type="text" name="location" id="location" size="30" required></td>
+</tr>
+
+    <tr>
+<td>Opentime</td>
+<td><input type="time" name="opentime" placeholder="hrs:mins" id="opentime" required pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$"></td>
+</tr>
+
+ <tr>
+<td>Closetime</td>
+<td><input type="time" name="closetime" placeholder="hrs:mins" id="closetime" required pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$"></td>
+</tr>
+
+<tr>
+<td>Category</td>
+<td><select name="Category" required>
+<option value="-1" selected>select..</option>
+<option value="Sweets">Sweets</option>
+<option value="Jewellery">Jewellery</option>
+<option value="Musical Instruments">Musical Instruments</option>
+<option value="Stationery">Stationery</option>
+</select></td>
+</tr>
+
+<tr>
+<td>Phone</td>
+<td><input type="text" name="phone" id="phone" size="10" required></td>
+</tr>
+
+<td colspan="2" ><input type="submit" value="Submit Form" /></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

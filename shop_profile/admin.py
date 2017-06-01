@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CreateProfile
+from .models import CreateShop
 
 # Register your models here.
-admin.site.register(CreateProfile)
+admin.site.register(CreateShop)
